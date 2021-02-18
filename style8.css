@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(https://i.imgur.com/GCJRhiA.png) no-repeat center center/cover;
+  color: lightgray;
+  font-family: sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  transform: scale(1);
+}
+.gradient-circle {
+  background: conic-gradient(rgb(58, 56, 56) 50%, rgb(22, 10, 10) 60%);
+  height: 280px;
+  width: 280px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: -2;
+  border-radius: 50%;
+}
+.Circle {
+  background-color: rgba(rgb(37, 36, 36));
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.pointer-container {
+  background-color: skyblue;
+  position: relative;
+  width: 10px;
+  top: -40px;
+  left: -50px;
+  height: 10px;
+  border-radius: 50%;
+  animation: rotate 10s linear forwards infinite;
+  transform-origin: bottom center;
+}
+.pointer {
+  background-color: skyblue;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+.container.grow {
+  animation: grow 3s linear forwards;
+}
+.container.shrink {
+  animation: grow 3s linear forwards;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateX(200px) rotate(-0deg);
+  }
+  to {
+    transform: rotate(360deg) translateY(200px) rotate(-360deg);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
